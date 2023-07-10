@@ -10,7 +10,7 @@ The ErrorHandling contract provides the following functions:
 This function demonstrates the usage of the assert function.
 It takes a num parameter and checks if it is not equal to zero using the assert statement.
 If the condition fails, it triggers an "Internal error" and aborts the execution.
-### __divide(uint _numerator, uint _denominator)__
+### divide(uint _numerator, uint _denominator)__
 This function demonstrates the usage of the revert function.
 It takes _numerator and _denominator parameters and performs division.
 If the _numerator is less than _denominator, it reverts the transaction with a custom error message stating that the numerator should be greater than the denominator.
