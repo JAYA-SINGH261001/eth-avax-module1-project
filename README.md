@@ -1,5 +1,5 @@
 # Error Handling Contract
-This is a Solidity smart contract that demonstrates different error handling techniques using assert, revert, and require functions.
+This is a Solidity smart contract that demonstrates different error handling techniques using ### __assert__, ### __revert__, and ### __require__ functions.
 # License
 This contract is using the MIT License.
 # Prerequisites
