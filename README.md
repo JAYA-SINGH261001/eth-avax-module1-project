@@ -6,7 +6,7 @@ This contract is using the MIT License.
 Solidity ^0.8.17
 #### Contract Details
 The ErrorHandling contract provides the following functions:
-__testAssert(uint num)__
+### __testAssert(uint num)__
 This function demonstrates the usage of the assert function.
 It takes a num parameter and checks if it is not equal to zero using the assert statement.
 If the condition fails, it triggers an "Internal error" and aborts the execution.
