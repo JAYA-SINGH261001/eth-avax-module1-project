@@ -22,9 +22,9 @@ This function demonstrates the usage of the require function.
 * If the condition fails, it reverts the transaction with a custom error message stating that the value of a should not be zero.
 * If the condition is met, it returns the result of the multiplication.
 # Usage
-* Make sure you have Solidity ^0.8.17 installed.
-* Compile and deploy the ErrorHandling contract to a supported Ethereum network.
-* Interact with the deployed contract by calling the available functions and providing the required parameters.
+- Make sure you have Solidity ^0.8.17 installed.
+- Compile and deploy the ErrorHandling contract to a supported Ethereum network.
+- Interact with the deployed contract by calling the available functions and providing the required parameters.
 # Video Walkthrough
 https://www.loom.com/share/05c6905edfdc44b6bb628d8d18d0e572?sid=0d9185da-5b55-42f7-87b0-823fdbb1548e
 Feel free to explore and modify the contract according to your needs!
