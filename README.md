@@ -1,10 +1,10 @@
 # Error Handling Contract
 This is a Solidity smart contract that demonstrates different error handling techniques using assert, revert, and require functions.
-## License
+# License
 This contract is using the MIT License.
-### Prerequisites
+# Prerequisites
 Solidity ^0.8.17
-#### Contract Details
+# Contract Details
 The ErrorHandling contract provides the following functions:
 ### __testAssert(uint num)__
 This function demonstrates the usage of the assert function.
@@ -21,10 +21,10 @@ It takes an a parameter and performs multiplication with a predefined constant b
 It first checks if a is greater than zero using the require statement.
 If the condition fails, it reverts the transaction with a custom error message stating that the value of a should not be zero.
 If the condition is met, it returns the result of the multiplication.
-##### Usage
+# Usage
 Make sure you have Solidity ^0.8.17 installed.
 Compile and deploy the ErrorHandling contract to a supported Ethereum network.
 Interact with the deployed contract by calling the available functions and providing the required parameters.
-###### Video Walkthrough
+# Video Walkthrough
 https://www.loom.com/share/05c6905edfdc44b6bb628d8d18d0e572?sid=0d9185da-5b55-42f7-87b0-823fdbb1548e
 Feel free to explore and modify the contract according to your needs!
