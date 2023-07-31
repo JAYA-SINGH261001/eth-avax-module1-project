@@ -1,30 +1,49 @@
-# Error Handling Contract
-This is a Solidity smart contract that demonstrates different error handling techniques using __assert__, __revert__, and __require__ functions.
+Sure, here's a simple README file for the "ErrorHandlingDemo" smart contract:
+
+# ErrorHandlingDemo Smart Contract
+
+This Solidity smart contract showcases the use of error handling mechanisms, including `require()`, `assert()`, and `revert()` statements, to ensure proper contract behavior and handle exceptions in different scenarios.
 # License
 This contract is using the MIT License.
 # Prerequisites
 Solidity ^0.8.17
-# Contract Details
-The ErrorHandling contract provides the following functions:
-### __testAssert(uint number)__
-* This function demonstrates the usage of the assert function.
-* It takes a num parameter and checks if it is not equal to zero using the assert statement.
-* If the condition fails, it triggers an "Internal error" and aborts the execution.
-### divide(uint _numerator, uint _denominator)__
-* This function demonstrates the usage of the revert function.
-* It takes _numerator and _denominator parameters and performs division.
-* If the _numerator is less than _denominator, it reverts the transaction with a custom error message stating that the numerator should be greater than the denominator.
-* If the condition is met, it returns the result of the division.
-### __mult(uint a)__
-This function demonstrates the usage of the require function.
-* It takes an a parameter and performs multiplication with a predefined constant b.
-* It first checks if a is greater than zero using the require statement.
-* If the condition fails, it reverts the transaction with a custom error message stating that the value of a should not be zero.
-* If the condition is met, it returns the result of the multiplication.
-# Usage
-- Make sure you have Solidity ^0.8.17 installed.
-- Compile and deploy the ErrorHandling contract to a supported Ethereum network.
-- Interact with the deployed contract by calling the available functions and providing the required parameters.
-# Video Walkthrough
-https://www.loom.com/share/05c6905edfdc44b6bb628d8d18d0e572?sid=0d9185da-5b55-42f7-87b0-823fdbb1548e
+
+## Contract Overview
+
+The "ErrorHandlingDemo" contract has the following features:
+
+- **Owner Management**: The contract allows the assignment of an owner during deployment, and certain functions are restricted to be called only by the owner using the `onlyOwner` modifier.
+
+- **Deposit and Withdraw**: Users can deposit and withdraw funds from the contract, while deposits should have an amount greater than 0 and withdrawals should not exceed the contract's current balance.
+
+- **Error Handling Functions**: The contract includes three functions (`assertExample()`, `revertExample()`, and `requireExample()`) to demonstrate the use of different error handling statements in Solidity.
+
+## Usage
+
+1. Deploy the contract: Deploy the "ErrorHandlingDemo" contract to an Ethereum network of your choice.
+
+2. Deposit Funds: Any user can deposit funds by calling the `deposit(uint256 amount)` function with the desired amount (greater than 0) as a parameter. This will increase the contract's `value` state variable.
+
+3. Withdraw Funds: Only the contract owner can withdraw funds. Call the `withdraw(uint256 amount)` function, specifying the amount to withdraw. The contract will transfer the specified amount to the owner's address if it is available in the contract's balance.
+
+4. Error Handlers: There are three functions to trigger different error handlers:
+
+   - `assertExample()`: This function contains an assertion that will always fail. Calling this function will cause the transaction to revert with an assertion error.
+
+   - `revertExample()`: This function contains a custom `require()` statement with a condition that is not met (`2 + 2 == 5`). Calling this function will cause the transaction to revert with the custom message "Math is not broken."
+
+   - `requireExample(uint256 a, uint256 b)`: This function checks if `b` is not zero using the `require()` statement. If `b` is zero, the function will revert with the message "Division by zero is not allowed."
+
+## Security Considerations
+
+- Ensure to deploy the contract to a trusted and secure Ethereum network.
+
+- When interacting with the contract, take note of the error messages to understand the reason for transaction failures.
+
+- Carefully handle the `value` state variable to avoid unintended losses or vulnerabilities.
+
+- Review and understand the implications of using the `assert()`, `revert()`, and `require()` statements in your smart contracts, and ensure they are used correctly.
+
+- Thoroughly test the contract's functions to validate its behavior and error handling mechanisms.
+
 Feel free to explore and modify the contract according to your needs!
