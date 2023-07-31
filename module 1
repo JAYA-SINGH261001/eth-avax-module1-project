@@ -1,0 +1,50 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ErrorHandlingDemo {
+    address public owner;
+    uint256 public value;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the contract owner can call this function");
+        _;
+    }
+
+    function deposit(uint256 amount) public payable {
+        require(amount > 0, "Amount should be greater than 0");
+        value += amount;
+    }
+
+    function withdraw(uint256 amount) public onlyOwner {
+        require(amount <= value, "Insufficient balance");
+        value -= amount;
+        payable(msg.sender).transfer(amount);
+    }
+
+    function assertExample() public pure {
+        // This is an example of assert statement.
+        // It is used to check for conditions that should never fail.
+        // In this case, we assert that the provided value is positive.
+        uint256 number = -1; // This will cause an assertion failure since 'number' can never be negative.
+        assert(number >= 0);
+    }
+
+    function revertExample() public pure {
+        // This is an example of revert statement.
+        // It is used to provide custom error messages and revert the transaction.
+        // In this case, we revert with a custom message when a condition is not met.
+        require(2 + 2 == 5, "Math is not broken"); // This will trigger a revert with the custom message.
+    }
+
+    function requireExample(uint256 a, uint256 b) public pure returns (uint256) {
+        // This is an example of require statement.
+        // It is used to check for conditions and revert the transaction with a message if the condition is not met.
+        // In this case, we require that 'b' is not zero.
+        require(b != 0, "Division by zero is not allowed");
+        return a / b;
+    }
+}
